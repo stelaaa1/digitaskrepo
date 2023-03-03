@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recruiter Portal</title>
+    <link rel="stylesheet" href="recruiter.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>Recruiter Portal</h1>
+      <p class="welcome-message">Welcome <span id="username">JACKSON</span></p>
+    </div>
+    <div class="content">
+      <h2>Candidate List</h2>
+      <div class="candidate-list">
+        <div class="candidate" id="candidate1">
+          <a href="#" class="candidate-thumbnail">
+            <img src="john.jpg">
+          </a>
+          <div class="candidate-details">
+            <a href="#" class="candidate-name">John Doe</a>
+            <p class="candidate-email">johndoe@example.com</p>
+            <p class="candidate-phone">(123) 456-7890</p>
+          </div>
+        </div>
+        <div class="candidate" id="candidate2">
+          <a href="#" class="candidate-thumbnail">
+            <img src="devi.jpg">
+          </a>
+          <div class="candidate-details">
+            <a href="#" class="candidate-name">Jane Smith</a>
+            <p class="candidate-email">janesmith@example.com</p>
+            <p class="candidate-phone">(123) 456-7890</p>
+          </div>
+        </div>
+        <!-- Add more candidate entries here -->
+      </div>
+      <div class="candidate-details-panel" id="candidate-details-panel">
+        <h2>Candidate Details</h2>
+        <div class="details-container">
+          <p><strong>Name: </strong><span id="details-name"></span></p>
+          <p><strong>Age: </strong><span id="details-age"></span></p>
+          <p><strong>Resume: </strong><a href="#" id="details-resume-link">View Resume</a></p>
+        </div>
+      </div>
+    </div>
+    <script src="recruiter.js"></script>
+    <script>
+      // Get the username from the session or local storage
+      let username = 'John Doe'; // Replace with actual username
+      document.getElementById('username').textContent = username;
+
+      // Add click event listeners to candidate name links
+      let candidateLinks = document.getElementsByClassName('candidate-name');
+      for (let i = 0; i < candidateLinks.length; i++) {
+        candidateLinks[i].addEventListener('click', showCandidateDetails);
+      }
+
+      // Function to show candidate details panel and populate it with details
+      function showCandidateDetails(event) {
+        // Prevent the default link behavior
+        event.preventDefault();
+        // Get the candidate ID from the parent candidate element
+        let candidateId = event.target.closest('.candidate').id;
+        // Get the candidate name, age, and resume URL from the server using AJAX or fetch API
+        let name = 'John Doe'; // Replace with actual name
+        let age = 30; // Replace with actual age
+        let resumeUrl = 'https://example.com/resume.pdf'; // Replace with actual resume URL
+        // Populate the candidate details panel with the details
+        document.getElementById('details-name').textContent = name;
+        document.getElementById('details-age').textContent = age;
+        document.getElementById('details-resume-link').href = resumeUrl;
+        // Show the candidate details panel
+        document.getElementById('candidate-details-panel').style.display = 'block';
+      }
+   

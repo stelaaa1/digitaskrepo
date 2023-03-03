@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DigiBoxx Recruitment Portal</title>
+  <!--font awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--css file-->
+  <link rel="stylesheet" href="page.css" />
+</head>
+<body>
+  <header class="header">
+    <a href="" class="logo">Digi<span>Boxx</span></a>
+    
+    <nav class="navbar">
+      <a href="index.html" class="href">HOME</a>
+      <a href="https://digiboxx.com/" class="href">ABOUT</a>
+      <a href="https://digiboxx.com/content-digitization-solutions" class="href">SERVICES</a>
+      <a href="page.html" class="href">CONTACT</a>
+    </nav>
+    <a href="" class="href menu fas fa-bars"></a>
+  </header>
+
+  <form action="candidate.html" onsubmit="redirectToPage()">
+    <h2>CREATE YOUR ACCOUNT</h2><BR><BR>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  
+    <label for="recruiter">Select Profile</label>
+    <select id="recruiter" name="recruiter">
+      <option value="yes">Recruiter</option>
+      <option value="no">Candidate</option>
+    </select>
+  
+    <input type="submit" value="Sign up">
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbar = document.querySelector('.header .navbar');
+      const menuButton = document.querySelector('.header .menu-button');
+    
+      const handleScroll = () => {
+        navbar.classList.remove('show');
+        menuButton.classList.remove('rotate');
+        if (window.scrollY > 0) {
+          document.querySelector('.header').classList.add('active');
+        } else {
+          document.querySelector('.header').classList.remove('active');
+        }
+      };
+      function redirectToPage() {
+  if (document.getElementById("recruiter").value == "yes") {
+    window.location.href = "recruiter.html";
+  }
+}
+      document.addEventListener('scroll', handleScroll);
+    
+      const form = document.querySelector('form');
+    
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+    
+        const recruiter = document.getElementById('recruiter').value;
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+    
+        // Validate username
+        if (username.length < 4) {
+          alert('Username must be at least 4 characters long');
+          return;
+        }
+  });
+});

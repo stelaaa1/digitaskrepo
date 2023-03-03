@@ -1,0 +1,103 @@
+html{
+    font-size: 62.5%;
+       scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+.header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .content {
+    margin: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="file"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0062cc;
+  }
+  
+  
+  #error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  #error-message:before {
+    content: "Error: ";
+  }
+  
+  #profile-pic-preview {
+    margin-top: 10px;
+  }
+  
+  #resume-download-link {
+    margin-top: 10px;
+    display: block;
+  }
+  /* footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 0.2rem solid var(--light-gray);
+  }
+  
+  .footer .socials ion-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    padding: 1rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .footer .socials ion-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--light-gray);
+  }
+  
+  .footer .copyright p {
+    font-size: 1.5rem;
+  }
+  /* footer */
